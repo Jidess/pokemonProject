@@ -8,12 +8,26 @@ let resultTxt
 let plyrResult = 0;
 let foeResult = 0;
 let winrateCalc ;
+let music = new Audio('public/assets/wav/bgSound.wav')
+let victory = new Audio('public/assets/wav/win.mp3')
+let hoverSelect = new Audio('public/assets/wav/select.mp3')
+let mute = document.getElementById('soundOff')
 
-btnAttack.forEach(attack => attack.addEventListener('click',(e) => {
+
+
+btnAttack.forEach(attack =>{
+    attack.addEventListener('click',(e) => {
     plyrChoiceDisplay = e.target.innerHTML
     plyrChoice = e.target.id
     aiChoice()
-}));
+})
+    attack.addEventListener('mouseenter',(e) =>{
+        hoverSelect.play();
+    })
+});
+
+
+
 
 function aiChoice() {
     let randomNum = Math.floor(Math.random()*3)+1
@@ -75,6 +89,7 @@ function resultText() {
     if (resultTxt == 'victoire') {
         plyrResult++;
         plyrResultTxt.innerHTML = `${plyrResult}`;
+        victory.play();
         
     }  if (resultTxt == 'défaite'){
         foeResult++;
@@ -93,3 +108,32 @@ function resultText() {
     }
     
 }
+
+
+
+// music and sound part 
+
+
+
+
+mute.addEventListener('click', muteSfx = () =>{
+    mute.classList.toggle('sfxOn')
+    let vol = document.getElementById('vol')
+    if (mute.classList.contains('sfxOn')) {
+        vol.src = 'public/assets/img/volumeOn.png'
+        music.play();
+        music.volume = 0.5;
+    } else {
+        vol.src = 'public/assets/img/volumeOff.png'
+        music.pause()
+        victory.volume = 0.01;
+        hoverSelect.volume = 0.01;
+        
+    }
+})
+
+
+
+
+
+
