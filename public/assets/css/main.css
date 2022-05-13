@@ -1,0 +1,230 @@
+
+
+body{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    background-color: #242526;
+    margin: 0;
+    background-image: url(../img/background.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+button{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+button:hover{
+    transform: translateY(-2px);
+    transform: translateX(-1px);
+}
+#Brasegali{
+    background-color: #5F4E45;
+    border: solid 2px black;
+    border-radius: 5%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px; 
+    height: 40px;
+}
+#Brasegali:hover{
+    background-color: #FF9E53;
+    border: solid 2px black;
+    border-radius: 5%;
+}
+#Pingoleon{
+    background-color: #3F4D58;
+    border: solid 2px black;
+    border-radius: 5%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px; 
+    height: 40px;
+}
+#Pingoleon:hover{
+    background-color: #4C92D8;
+    border: solid 2px black;
+    border-radius: 5%;
+}
+
+#Jungko{
+    background-color: #435347;
+    border: solid 2px black;
+    border-radius: 5%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px; 
+    height: 40px;
+}
+#Jungko:hover{
+    background-color: #61BC58;
+    border: solid 2px black;
+    border-radius: 5%;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35vw;
+    margin: auto;
+    height: 50vh;
+    background-image: url(../img/bgBattle.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+}
+@media (max-width: 1098px) {
+    .box{
+        width: 55vw!important;
+    }
+    #bf{
+        width: 55vw!important;
+    }
+}
+@media (max-width: 592px) {
+    .box{
+        width: 100vw!important;
+    }
+    #bf{
+        width: 100vw!important;
+    }
+
+    
+}
+#foeZone{
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 30px;
+    flex: 3;
+    width: 35vw;
+    animation: foeApparition 2s ease-out;
+}
+
+@keyframes foeApparition {
+    from {
+        opacity: 0;
+        transform: translateX(-30vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0vw);
+    }
+
+}
+#foePkmn{
+    animation: pkmHidden 2s, pkmnOut 1s 2s ease-out;
+}
+
+.pkmOut{
+    animation: pkmnOut 1s ease-out;
+}
+
+@keyframes pkmHidden {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:0;
+    }
+}
+@keyframes pkmnOut {
+    from{
+        transform: scale(0.2);
+        transform-origin: bottom;
+        filter:  brightness(0) invert(1);
+    }
+    to{
+        transform: scale(1);
+        transform-origin: bottom;
+        filter: none;
+    }
+}
+#bf{
+    flex: 4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 35vw;
+}
+.plyrPkmn{
+    justify-self: flex-start;
+}
+#porygon{
+    animation: pkmApparition 2s ease-out;
+    z-index: -1;
+}
+
+@keyframes pkmApparition{
+    from {
+        
+        transform: translateY(+5vw);
+        
+    }
+    to {
+        
+        transform: translateY(0vw);
+        
+    }
+}
+
+.plyrAttack{
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: flex-end;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+#gameText{
+    flex: 1;
+    background-color: whitesmoke;
+    border: dashed black;
+    border-radius: 2%;
+    z-index: 3;
+    padding: 3px;
+}
+
+.box2{
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    background: rgb(0,9,254);
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+background: linear-gradient(260deg, rgba(0,9,254,1) 0%, rgba(254,0,0,1) 100%, rgba(255,255,255,1) 100%);
+    padding: 5px;
+    opacity: 0.9;
+}
+
+
+.trainer{
+    height:120px;
+}
+.trainerCardBlue{
+    animation: foeApparition 2s ;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    text-align: center;
+    border: solid 1px white;
+    border-radius: 5%;
+    width: 120px;
+    background: rgb(49,49,49);
+background: linear-gradient(180deg, rgba(49,49,49,1) 0%, rgba(0,15,146,1) 0%, rgba(0,9,254,1) 100%, rgba(255,255,255,1) 100%);
+}
+.trainerCardRed{
+    animation: foeApparition 2s ;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    text-align: center;
+    border: solid 1px white;
+    border-radius: 5%;
+    width: 120px;
+    background: rgb(49,49,49);
+background: linear-gradient(180deg, rgba(49,49,49,1) 0%, rgba(146,0,0,1) 0%, rgba(254,0,0,1) 100%, rgba(255,255,255,1) 100%);
+}
+
+.vsCard{
+    animation:pkmHidden 2s, pkmnOut 1s 2s;
+    text-align: center;
+    align-self: center;
+}
